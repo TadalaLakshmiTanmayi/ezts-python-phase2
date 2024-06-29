@@ -1,0 +1,33 @@
+class Stack:
+    def __init__(self, size):
+        self.stack = []
+        self.size = size
+
+    def push(self, data):
+        if len(self.stack) < self.size:
+            self.stack.append(data)
+        else:
+            print("Stack overflow")
+
+    def pop(self):
+        if len(self.stack) == 0:
+            print("Stack underflow")
+        else:
+            self.stack.pop()
+
+    def peek(self):
+        if len(self.stack) == 0:
+            print("Stack is empty")
+        else:
+            print(self.stack[-1])
+
+# Create a stack object with a specified size
+stack_size = int(input("Enter the size of the stack: "))
+s = Stack(stack_size)
+
+# Example usage
+s.push(int(input("Enter element to push: ")))
+s.push(int(input("Enter element to push: ")))
+s.peek()
+s.pop()
+s.peek()
